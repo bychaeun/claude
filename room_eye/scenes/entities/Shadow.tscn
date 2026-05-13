@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://roomeye_shadow"]
+
+[ext_resource type="Script" path="res://scripts/ShadowChase.gd" id="1_shadow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shadow"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shadow"]
+radius = 9.0
+height = 22.0
+
+[node name="Shadow" type="CharacterBody2D"]
+visible = false
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_shadow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_shadow")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_shadow")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://roomeye_title"]
+
+[ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_titlescr"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_titlescr")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.01, 0.01, 1.0)
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 1
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/VBox"]
+layout_mode = 2
+text = "ROOM:EYE"
+horizontal_alignment = 1
+
+[node name="SubLabel" type="Label" parent="CanvasLayer/VBox"]
+layout_mode = 2
+text = "— 타인의 시선에 갇힌 방 —"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="CanvasLayer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "시작하기"

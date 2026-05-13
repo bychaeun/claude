@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://roomeye_inter"]
+
+[ext_resource type="Script" path="res://scripts/Interactable.gd" id="1_inter"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inter"]
+size = Vector2(52.0, 52.0)
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_inter")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_inter")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PromptLabel" type="Label" parent="."]
+position = Vector2(-16.0, -44.0)
+text = "[ 조사 ]"
